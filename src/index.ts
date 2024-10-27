@@ -7,17 +7,24 @@ import {
   PublishTokenSchema,
   PublishTokenParams,
 } from "./actions/publish-token";
+import { ChainEnvSchema } from "./actions/chain";
 
 const app = new Elysia()
   .use(swaggerSpec)
   .get("/", () => "Sui Service is running")
-  .get("/chain/:env", ({ params, error }) => {
-    try {
-      return getChainInfo(params.env);
-    } catch (e: any) {
-      return error(400, e.message);
-    }
-  })
+  .get(
+    "/chain/:env",
+    ({ params, error }) => {
+      try {
+        return getChainInfo(params.env);
+      } catch (e: any) {
+        return error(400, e.message);
+      }
+    },
+    {
+      params: ChainEnvSchema,
+    },
+  )
   .post("/deploy-token", ({ body }) => postPublishToken(body), {
     body: PublishTokenSchema,
   })
