@@ -6,6 +6,9 @@
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
+    "@axelar-network/axelar-cgp-sui": "^0.8.0",
+    "@elysiajs/swagger": "^1.1.5",
+    "@mysten/sui": "^1.13.0",
     "elysia": "latest"
   },
   "devDependencies": {
