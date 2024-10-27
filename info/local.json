@@ -1,0 +1,63 @@
+{
+  "name": "Sui",
+  "axelarId": "sui",
+  "networkType": "localnet",
+  "tokenSymbol": "SUI",
+  "rpc": "https://sui-node.europarkland.online",
+  "faucetUrl": "https://sui-faucet.europarkland.online",
+  "contracts": {
+    "AxelarGateway": {
+      "address": "0xa70a92118d1fe6abcfe6a80fc225f380b83b84de6a354104ee1b2213d0572e54",
+      "objects": {
+        "Gateway": "0xaaa7e61edebf5e315e8fe4b8f50975837cbddc72c35fac5ff56f68332a506df3",
+        "UpgradeCap": "0x93d08366a83aa26df93824077f14674a1516001ecfeb939904918ebb7b1de2a0",
+        "Gatewayv0": "0x024c505ef1b4341e772ee2ec24d60fbf148ace95874631d8e89c911fd08c7b9c"
+      },
+      "domainSeparator": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "operator": "0x09e0eaf3a1111f411b7aa488ed211820eb7a53a9b29741fd5ac92ea97ebea2a2",
+      "minimumRotationDelay": 86400
+    },
+    "Utils": {
+      "address": "0x264f7b9aa555103681c294e810ab814914cc8038c485f10b9ecd2c698a85d9a5"
+    },
+    "VersionControl": {
+      "address": "0xf758b6332eec6040dcc5affa9cf73a6998a35b0a59195e672b7564410e7c9967"
+    },
+    "GasService": {
+      "address": "0xb685cedd853856c06e23922b80fb0a89d6740828cd2b05def4572a2c093d936e",
+      "objects": {
+        "GasCollectorCap": "0xb44738bb671c6df97aa35a9158c08b843e2023b8bb82c8f64141dd62d5ed3f11",
+        "GasService": "0x9c92a6782d91a99da9a273e4afc3e0f7ffb3a13c7b20c23e57dd2197c755c8ee",
+        "GasServicev0": "0x161d525ba5509ffeac91b583e910de690e46b791e99fe24ab01b31deaae7cc5e"
+      }
+    },
+    "Abi": {
+      "address": "0x9e018a8bf77baa88b08e26354408949ab04c8e26db6bc7b052e4e2df39782831"
+    },
+    "RelayerDiscovery": {
+      "address": "0x850a04a379509778dc540dc59fe5bf5f80d94dc90cffa161a8fd8ae1be9294ae",
+      "objects": {
+        "RelayerDiscovery": "0x5a62d2d521df8eb2693f9786c5c29a9100f92baed7b0aca9c9c4946023d5a8c8",
+        "RelayerDiscoveryv0": "0xddf350a1c7c77ec03744e141a3a7f8eb50a14a57990ecdd20aca92203910a1f2"
+      }
+    },
+    "ITS": {
+      "address": "0x3c16d53b1c5277426ca1bf9a81cb701771e715ee6bf0d6e06915102e390df2fd",
+      "objects": {
+        "ITS": "0x56e6de2d51d9d60a994a636d1caba5c4a88064f30b9008d6dffd5590ba9c1cc2",
+        "ITSv0": "0x7487511160d0cfa8f7ba9649f02e0dfdf4a1668e46a2f5e743ce6fd3672ef57e",
+        "ChannelId": "0x3881a9b50ee5b32602365e15f240364f3c79829b93534d2e54bfa6365ed1a997",
+        "OwnerCap": "0xc655a09b3d85f95a23607603174b5975d8e39f13473ffb7160a3d02a635a9f86"
+      }
+    },
+    "Example": {
+      "address": "0x5e456b2480c610f676f75e681888e6f223ae5f2e0696e33e72c2690d0a47ebe9",
+      "objects": {
+        "GmpSingleton": "0x3eb30d4495fff78aaa482635fe349c977c8ce4390a861b70001fdf94a1b6bcab",
+        "GmpChannelId": "0x3ee23dee77ae9ca21515de0c79feb81fdb5b5d32671bb0c7d3ea887cbc57e924",
+        "ItsSingleton": "0x292b77708fa3ac7f6595f81445abc0a0a87b602014d2b9c1b854a06ed2ca2a5e",
+        "ItsChannelId": "0xa6aba854d55d48b6bfb4401e6c40380d1358c1ace4c1e9d35f5df877cd1ea825"
+      }
+    }
+  }
+}
