@@ -1,6 +1,6 @@
 import { copyMovePackage, TxBuilder } from "@axelar-network/axelar-cgp-sui";
-import { toHex } from "@mysten/sui/utils";
 import { keypair, moveDir, suiClient } from "../constants";
+import { buildTxBytes } from "../utils";
 
 export async function publishInterchainTx(
   sender: string,
@@ -8,19 +8,15 @@ export async function publishInterchainTx(
   symbol: string,
   decimals: number,
 ) {
-  // const walletAddress = keypair.toSuiAddress();
+  copyMovePackage("interchain_token", null, moveDir);
 
-  // await fundWalletIfNeeded(walletAddress);
+  const txBuilder = new TxBuilder(suiClient);
 
   const interchainTokenOptions = {
     name,
     symbol,
     decimals,
   };
-
-  copyMovePackage("interchain_token", null, moveDir);
-
-  const txBuilder = new TxBuilder(suiClient);
 
   const cap = await txBuilder.publishInterchainToken(
     moveDir,
@@ -29,11 +25,5 @@ export async function publishInterchainTx(
 
   txBuilder.tx.transferObjects([cap], keypair.toSuiAddress());
 
-  txBuilder.tx.setSender(sender);
-
-  const txBytes = await txBuilder.tx.build({
-    client: suiClient,
-  });
-
-  return toHex(txBytes);
+  return buildTxBytes(sender, txBuilder);
 }
