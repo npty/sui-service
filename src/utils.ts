@@ -1,8 +1,8 @@
 import { TxBuilder } from "@axelar-network/axelar-cgp-sui";
 import { decodeSuiPrivateKey } from "@mysten/sui/cryptography";
-import { toHex } from "@mysten/sui/dist/cjs/utils";
+import { toHex } from "@mysten/sui/utils";
 import { Secp256k1Keypair } from "@mysten/sui/keypairs/secp256k1";
-import { keypair, suiClient } from "./constants";
+import { suiClient } from "./constants";
 
 export function getWallet() {
   const decodedKey = decodeSuiPrivateKey(process.env.PRIVATE_KEY || "");
