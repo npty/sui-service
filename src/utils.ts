@@ -1,5 +1,5 @@
-import { decodeSuiPrivateKey } from "@mysten/sui/dist/cjs/cryptography";
-import { Secp256k1Keypair } from "@mysten/sui/dist/cjs/keypairs/secp256k1";
+import { decodeSuiPrivateKey } from "@mysten/sui/cryptography";
+import { Secp256k1Keypair } from "@mysten/sui/keypairs/secp256k1";
 
 export function getWallet() {
   const decodedKey = decodeSuiPrivateKey(process.env.PRIVATE_KEY || "");

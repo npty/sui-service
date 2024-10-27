@@ -1,5 +1,5 @@
 import swagger from "@elysiajs/swagger";
-import { SuiClient } from "@mysten/sui/dist/cjs/client";
+import { SuiClient } from "@mysten/sui/client";
 import { getWallet } from "./utils";
 import path from "path";
 

@@ -1,5 +1,5 @@
 import { copyMovePackage, TxBuilder } from "@axelar-network/axelar-cgp-sui";
-import { toHex } from "@mysten/sui/dist/cjs/utils";
+import { toHex } from "@mysten/sui/utils";
 import { keypair, moveDir, suiClient } from "../constants";
 
 export async function publishInterchainTx(
