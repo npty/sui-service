@@ -1,15 +1,32 @@
-# Elysia with Bun runtime
+# Sui Service
+
+This is a service that allows you to publish tokens on the Sui blockchain.
 
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
+
+Install the dependencies:
+
+```
+bun install
 ```
 
-## Development
-To start the development server run:
-```bash
+Run the development server:
+
+```
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+## Build and Publish Docker Image
+
+Build the Docker image:
+
+```
+docker build -t nptytn/sui-service .
+```
+
+Publish the Docker image:
+
+```
+docker push nptytn/sui-service:latest
+```
+

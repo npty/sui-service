@@ -1,7 +1,9 @@
 import { Static, t } from "elysia";
 
 export const ChainEnvSchema = t.Object({
-  env: t.Union([t.Literal("local"), t.Literal("testnet")]),
+  env: t.String({
+    enum: ["testnet"],
+  }),
 });
 
 export type ChainEnv = Static<typeof ChainEnvSchema>;

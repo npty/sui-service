@@ -1,15 +1,18 @@
 {
   "name": "sui-service",
-  "version": "1.0.50",
+  "version": "0.0.2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run sync-config && bun run --watch src/index.ts",
+    "start": "./server",
+    "build": "./scripts/build.sh",
     "sync-config": "bun run sync.ts"
   },
   "dependencies": {
     "@axelar-network/axelar-cgp-sui": "^0.8.0",
     "@elysiajs/swagger": "^1.1.5",
     "@mysten/sui": "^1.13.0",
+    "@tqman/nice-logger": "^1.0.7",
     "elysia": "latest"
   },
   "devDependencies": {
@@ -17,4 +20,3 @@
   },
   "module": "src/index.js"
 }
-

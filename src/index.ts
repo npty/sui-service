@@ -1,16 +1,22 @@
 import { Elysia } from "elysia";
 import fs from "fs";
 import path from "path";
-import { swaggerSpec, port } from "./constants";
+import { swaggerSpec } from "./constants";
 import {
   publishInterchainTx,
   PublishTokenSchema,
   PublishTokenParams,
 } from "./actions/publish-token";
 import { ChainEnvSchema } from "./actions/chain";
+import { logger } from "@tqman/nice-logger";
 
 const app = new Elysia()
   .use(swaggerSpec)
+  .use(
+    logger({
+      mode: "live",
+    }),
+  )
   .get("/", () => "Sui Service is running")
   .get(
     "/chain/:env",
@@ -28,7 +34,10 @@ const app = new Elysia()
   .post("/deploy-token", ({ body }) => postPublishToken(body), {
     body: PublishTokenSchema,
   })
-  .listen(port);
+  .listen({
+    port: process.env.PORT || 3000,
+    hostname: "0.0.0.0",
+  });
 
 async function postPublishToken(body: PublishTokenParams) {
   const txBytes = await publishInterchainTx(body);
@@ -56,5 +65,5 @@ async function getChainInfo(env: string) {
 }
 
 console.log(
-  `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
+  `🦊 Sui Service is running at ${app.server?.hostname}:${app.server?.port}`,
 );
