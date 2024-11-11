@@ -39,6 +39,12 @@ COPY . .
 # Install dependencies
 RUN bun install
 
+RUN <<EOF bash
+cd node_modules/@axelar-network/axelar-cgp-sui/move/interchain_token
+# To clone all the dependencies
+sui move build
+EOF
+
 # Build the executable file
 RUN bun run build
 

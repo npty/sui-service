@@ -7,6 +7,7 @@ import {
   PublishTokenSchema,
   PublishTokenParams,
 } from "./actions/publish-token";
+import { cors } from "@elysiajs/cors";
 import { ChainEnvSchema } from "./actions/chain";
 import { logger } from "@tqman/nice-logger";
 
@@ -18,6 +19,13 @@ const app = new Elysia()
     }),
   )
   .get("/", () => "Sui Service is running")
+  .use(
+    cors({
+      origin: "*",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["Content-Type"],
+    }),
+  )
   .get(
     "/chain/:env",
     ({ params, error }) => {
@@ -50,18 +58,16 @@ async function postPublishToken(body: PublishTokenParams) {
 }
 
 async function getChainInfo(env: string) {
-  if (!["local", "testnet"].includes(env)) {
+  if (!["local", "testnet", "devnet-amplifier"].includes(env)) {
     throw new Error(
-      "Invalid environment. Only local and testnet are supported",
+      "Invalid environment. Only local, 'devnet-amplifier' and testnet are supported",
     );
   }
 
   const chainConfigPath = path.join(__dirname, "..", "info", `${env}.json`);
   const info = JSON.parse(fs.readFileSync(chainConfigPath, "utf-8"));
 
-  return {
-    data: info,
-  };
+  return info;
 }
 
 console.log(

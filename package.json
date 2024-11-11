@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@axelar-network/axelar-cgp-sui": "^0.8.0",
+    "@elysiajs/cors": "^1.1.1",
     "@elysiajs/swagger": "^1.1.5",
     "@mysten/sui": "^1.13.0",
     "@tqman/nice-logger": "^1.0.7",

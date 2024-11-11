@@ -2,8 +2,10 @@ import swagger from "@elysiajs/swagger";
 import { SuiClient } from "@mysten/sui/client";
 import path from "path";
 
-export const rpcUrl = process.env.SUI_NODE || "http://localhost:9000";
-export const faucetUrl = process.env.SUI_FAUCET || "http://localhost:9123";
+export const rpcUrl =
+  process.env.SUI_NODE || "https://fullnode.testnet.sui.io/";
+export const faucetUrl =
+  process.env.SUI_FAUCET || "https://faucet.testnet.sui.io/";
 export const suiClient = new SuiClient({ url: rpcUrl });
 
 export const moveDir = path.join(process.cwd(), "move");

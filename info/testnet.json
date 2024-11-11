@@ -51,6 +51,11 @@
         "ITSv0": "0x251dfe54b4a940019dc35a83625e29dd4eec7b0a27b7c4e7b7185dfe3868d083",
         "ChannelId": "0xb4513c7c54a5b5b07a8104ea46ef80ca97a91680ef9d641c8142d50bb309ccb3",
         "OwnerCap": "0x75fc50102a43788efc37c0b88a1d18db56b9c09f784178df4d771cff4bc5bb6e"
+      },
+      "trustedAddresses": {
+        "Ethereum": [
+          "0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41"
+        ]
       }
     },
     "Example": {
