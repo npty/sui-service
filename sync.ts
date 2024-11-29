@@ -9,33 +9,35 @@ const baseDir = path.join(
   "info",
 );
 const localDir = path.join(baseDir, "local.json");
-const testnetDir = path.join(baseDir, "testnet.json");
+const devnetDir = path.join(baseDir, "devnet-amplifier.json");
 const infoDir = path.join(__dirname, "info");
 
-type Env = "local" | "testnet";
+type Env = "local" | "devnet-amplifier";
 
 export function sync(env: Env = "local") {
   if (!fs.existsSync(infoDir)) {
     fs.mkdirSync(infoDir);
   }
 
+  const dir = env === "local" ? localDir : devnetDir;
+
   if (env === "local") {
-    const local = JSON.parse(fs.readFileSync(localDir, "utf-8"));
+    const local = JSON.parse(fs.readFileSync(dir, "utf-8"));
 
     // Modify the rpc and faucet urls
     local.chains.sui.rpc = process.env.SUI_NODE;
     local.chains.sui.faucetUrl = process.env.SUI_FAUCET;
 
     fs.writeFileSync(
-      path.join(infoDir, "local.json"),
+      path.join(infoDir, `${env}.json`),
       JSON.stringify(local.chains.sui, null, 2),
     );
   } else {
-    const testnet = JSON.parse(fs.readFileSync(testnetDir, "utf-8"));
+    const data = JSON.parse(fs.readFileSync(dir, "utf-8"));
 
     fs.writeFileSync(
-      path.join(infoDir, "testnet.json"),
-      JSON.stringify(testnet.sui, null, 2),
+      path.join(infoDir, `${env}.json`),
+      JSON.stringify(data.chains["sui-test2"], null, 2),
     );
   }
 }
@@ -43,8 +45,8 @@ export function sync(env: Env = "local") {
 export function syncAll() {
   sync("local");
   console.log("Synced local ✅");
-  sync("testnet");
-  console.log("Synced testnet ✅");
+  sync("devnet-amplifier");
+  console.log("Synced devnet-amplifier ✅");
 }
 
 syncAll();

@@ -14,7 +14,6 @@ export type PublishTokenParams = Static<typeof PublishTokenSchema>;
 
 export async function publishInterchainTx(params: PublishTokenParams) {
   const { sender, name, symbol, decimals } = params;
-  await fundWalletIfNeeded(sender);
 
   copyMovePackage("interchain_token", fromMoveDir, moveDir);
 
