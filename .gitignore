@@ -42,6 +42,6 @@ package-lock.json
 **/*.bun
 
 
-.env*
+.env
 move
 server

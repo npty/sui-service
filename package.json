@@ -2,7 +2,6 @@
   "name": "sui-service",
   "version": "0.0.2",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run sync-config && bun run --watch src/index.ts",
     "start": "./server",
     "build": "./scripts/build.sh",
