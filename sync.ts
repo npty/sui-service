@@ -49,4 +49,8 @@ export function syncAll() {
   console.log("Synced devnet-amplifier ✅");
 }
 
-syncAll();
+if (process.env.SKIP_SYNC !== "true") {
+  syncAll();
+} else {
+  console.log("Skipping sync...");
+}
