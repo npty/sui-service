@@ -37,7 +37,7 @@ export function sync(env: Env = "local") {
 
     fs.writeFileSync(
       path.join(infoDir, `${env}.json`),
-      JSON.stringify(data.chains["sui-test2"], null, 2),
+      JSON.stringify(data.chains["sui"], null, 2),
     );
   }
 }
