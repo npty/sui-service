@@ -8,7 +8,7 @@
     "sync-config": "bun run sync.ts"
   },
   "dependencies": {
-    "@axelar-network/axelar-cgp-sui": "^0.8.0",
+    "@axelar-network/axelar-cgp-sui": "0.0.0-snapshot.c920857",
     "@elysiajs/cors": "^1.1.1",
     "@elysiajs/swagger": "^1.1.5",
     "@mysten/sui": "^1.13.0",

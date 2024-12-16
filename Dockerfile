@@ -9,7 +9,7 @@ RUN apt-get update && \
 	git
 
 # Set Sui version - you can override this during build if needed
-ARG SUI_VERSION=mainnet-v1.35.2
+ARG SUI_VERSION=testnet-v1.39.1
 
 # Download and install Sui using the same approach as GitHub Action
 RUN curl -L -o sui-${SUI_VERSION}-ubuntu-x86_64.tgz \
