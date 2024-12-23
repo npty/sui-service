@@ -1,62 +1,69 @@
 {
-  "name": "Sui",
-  "axelarId": "sui",
-  "networkType": "localnet",
-  "tokenSymbol": "SUI",
-  "rpc": "https://fullnode.testnet.sui.io/",
-  "faucetUrl": "https://faucet.testnet.sui.io/",
-  "contracts": {
-    "Utils": {
-      "address": "0x739ee294fc414f82369ed901e21ddb0274f5538f43ad3ae69d2422944951be7e"
-    },
-    "VersionControl": {
-      "address": "0x215c05e6ed46e39a163f947bb13ce7246d6b6a4144b0e69fe6ae76203c2bfe06"
-    },
-    "AxelarGateway": {
-      "address": "0xdc7acab07e20827af1d9aa6085d34e4db791c45c56c99284e15380c85659601a",
-      "objects": {
-        "Gateway": "0xf8fab485e6973d49443afc433b89fe69f69ad4cbb0e813924b3249762d4da66a",
-        "UpgradeCap": "0x3c098463a5d19e1a6b58c42e33e92faedf8f6b5befbce3b6c90ced125d378b30",
-        "Gatewayv0": "0xc6a202e8d1cbfa7c767dcdbb7d9bc68f732e1328ab20b3c19e45a63fb6d52baa"
+  "sui": {
+    "name": "Sui",
+    "axelarId": "sui",
+    "networkType": "localnet",
+    "tokenSymbol": "SUI",
+    "rpc": "https://fullnode.testnet.sui.io/",
+    "faucetUrl": "https://faucet.testnet.sui.io/",
+    "contracts": {
+      "Utils": {
+        "address": "0x53a2e43715fdb6156016b387c58101b63e564989ffe7354c021b103fec4ca4b8"
       },
-      "domainSeparator": "0x0000000000000000000000000000000000000000000000000000000000000000",
-      "operator": "0x09e0eaf3a1111f411b7aa488ed211820eb7a53a9b29741fd5ac92ea97ebea2a2",
-      "minimumRotationDelay": 86400
-    },
-    "RelayerDiscovery": {
-      "address": "0x89f7ddf7b3b6b6cd1bd716925f3dfdc5d2a447d01956696966124ed259275489",
-      "objects": {
-        "RelayerDiscovery": "0x80d34d4716e3a8aa8e05afdca24a03467099a8e81e78a59f9d0162f46404d79a",
-        "RelayerDiscoveryv0": "0x8d92a3742d45ead20d9a24b6b697f1d6e33a38509c497b5a601a6d01cb8dabdd"
-      }
-    },
-    "GasService": {
-      "address": "0xe2c18c806f029bcce1f0871ca20e8473fa77d906d3d23951ec8b27bedd490465",
-      "objects": {
-        "GasCollectorCap": "0xb6301787d3331db3e1deb7e27945d5d3215b9930568ff7409658bdc8fa538d10",
-        "GasService": "0x881b1cccb1249d74d00e24c6399757df88f23b288deb72bbbce66bba7fd1d7d4",
-        "GasServicev0": "0x64150270d5d6cb73e5c0c6165be9266c8ee5d43584615f2dbd83fa104941a156"
-      }
-    },
-    "Abi": {
-      "address": "0xc57e5101a283278d9c0598f08274282f77e819c2ba18bd5022bd8b1e9d547db7"
-    },
-    "ITS": {
-      "address": "0x544c597a052fbfd7c8efffc6954cf1ebe95142087c88a575eec791a691650ad8",
-      "objects": {
-        "ITS": "0x462c4ea3928ad5438055b3716e75b3c23eed2c643278867f6f219a85e8f85261",
-        "ITSv0": "0x69c8043589b22ed110be3d3e318c371105ddbd2bdc1f8804c7be5c179ac53863",
-        "ChannelId": "0xc0fc7ea2fdce589f9ea03b8fc64a0b8a664c941338fe061c08c03f81d074ab3d",
-        "OwnerCap": "0xc5b9de9d3dcb1a50ddb50fe032768097880dd0af623e3c7a93a79a86aaead34a"
-      }
-    },
-    "Example": {
-      "address": "0x957e1d5891cec4ff9602ac64fc17ec6b132058ce1b00716287674feeeeb9f441",
-      "objects": {
-        "GmpSingleton": "0x346b2479563a47a4f7d7117e88fdeb852128af9db2a85b2c3e619dc9e4829322",
-        "GmpChannelId": "0x4efc9af1a4622e53cfa14b802260de700780688517889d5333d7ebd315e12ae0",
-        "ItsSingleton": "0x3aa18951772a4a10523199ee12923fda8c60cf8883456047a2db3d1a8d881a56",
-        "ItsChannelId": "0x62699978ddeb0ce3add10ba53f2c2c3cbd063599c0bac36fe65f8a78a5b73338"
+      "VersionControl": {
+        "address": "0xc504cdaf260186684de6f4f7f63bb14bcdcc7077e21597c707178fd557f986cc"
+      },
+      "AxelarGateway": {
+        "address": "0x97774ba3488f3a6e2082fd57d386c36a5ac01254bf0edf806b27fe65fe30a9e2",
+        "objects": {
+          "Gateway": "0xc244114b2f217611c8be7daa1b54dce7303a3935eab70ca7fdcb3aadd851bb91",
+          "UpgradeCap": "0xbc6944b186a9bf8121c59544f0ee1550655c4cf7b1ea50c8b589aa0c4c3799b0",
+          "Gatewayv0": "0x192983909f2f1f5566e1596ca1953255d78902e1f9be45d06558961371e25664"
+        },
+        "domainSeparator": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "operator": "0x09e0eaf3a1111f411b7aa488ed211820eb7a53a9b29741fd5ac92ea97ebea2a2",
+        "minimumRotationDelay": 86400
+      },
+      "RelayerDiscovery": {
+        "address": "0xa4b4fca87b7edfeefac3219afb22ccb7d411685d7c826a88074abbdaca0d4efc",
+        "objects": {
+          "RelayerDiscovery": "0x257e080cb6ba9220d92d3f1f9b54c870ecb689f30a949ca9037b6759a8c962fa",
+          "RelayerDiscoveryv0": "0x42ae2c89eacb8a3ca5974f553f61b2897cba55f4b3f394500c2ae8689de6f243"
+        }
+      },
+      "GasService": {
+        "address": "0x9e90e1fa7e464f625cfff949ac1f085dc6b010dafd9a4f222229e92bf98fa8c3",
+        "objects": {
+          "GasCollectorCap": "0x6c05cff79821ef8e429485abf405be935c5ac29c3c10f90554d062f1c6bac77d",
+          "GasService": "0x290f6138d51e592215dcfce3c7d0efa8c21762229b131bac3d9e2a6f8cf5a4da",
+          "GasServicev0": "0xad4cf1697e9a76c7080427b6e5bdf009062c5be5b4a522c92192363e40b4ce07"
+        }
+      },
+      "Abi": {
+        "address": "0x7d09194392127b5859df17b6ae7cac721feeb61f5a1b6c4b032fef2684b34877"
+      },
+      "ITS": {
+        "address": "0xa1d2c07d12d1e200ead236f3f46e547703480d82d43961cf9f6860cb7817633d",
+        "objects": {
+          "ITS": "0xfdfb6b6fec6afc2d2dd4e4d10878fc5350fb09ff8e7b2eda86a81811d57362e4",
+          "ITSv0": "0x9bc3598d957da90f728f1fc50f20a9f20171ca416d58c941916ae0d6bc8fbac9",
+          "ChannelId": "0x3e7803ca47df1db1ce8cb90814da0e2d98f9601e6b57259f383b58cef63b9265",
+          "OwnerCap": "0xcce29b5a0e66a78ebc3c702b9825e2d251ce04acd12979ecd4b3f8369b35cd3c"
+        },
+        "trustedAddresses": {
+          "avalanche-fuji": [
+            "hub"
+          ]
+        }
+      },
+      "Example": {
+        "address": "0x2ab0b056d876fea5313c66317be86a5b03b65c7ace4a031576f5ecb7575ea05c",
+        "objects": {
+          "GmpSingleton": "0x2803d954084532d8a5df952a07dd159098991ca561cd75c887475c7ff0ea0012",
+          "GmpChannelId": "0x98bc0ca744fd065b57f424dea6e6d2a7d87c6d40444132503a03c6090915b365",
+          "ItsSingleton": "0xe3f58dd676e7dcf6d3942a120f1012ac8b844f1df7db2661eb750c308cec9ac4",
+          "ItsChannelId": "0xe3df07d8850cb6b37899cb1832558398cd4b871f257c34ddb457c47de04540ae"
+        }
       }
     }
   }

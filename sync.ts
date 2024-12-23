@@ -30,14 +30,14 @@ export function sync(env: Env = "local") {
 
     fs.writeFileSync(
       path.join(infoDir, `${env}.json`),
-      JSON.stringify(local.chains.sui, null, 2),
+      JSON.stringify(local.chains, null, 2),
     );
   } else {
     const data = JSON.parse(fs.readFileSync(dir, "utf-8"));
 
     fs.writeFileSync(
       path.join(infoDir, `${env}.json`),
-      JSON.stringify(data.chains["sui"], null, 2),
+      JSON.stringify(data.chains, null, 2),
     );
   }
 }
