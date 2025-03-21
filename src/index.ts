@@ -6,6 +6,9 @@ import {
   publishInterchainTx,
   PublishTokenSchema,
   PublishTokenParams,
+  publishInterchainWithChannelTx,
+  PublishTokenWithChannelParams,
+  PublishTokenWithChannelSchema,
 } from "./actions/publish-token";
 import { cors } from "@elysiajs/cors";
 import { ChainEnvSchema } from "./actions/chain";
@@ -42,6 +45,13 @@ const app = new Elysia()
   .post("/deploy-token", ({ body }) => postPublishToken(body), {
     body: PublishTokenSchema,
   })
+  .post(
+    "/deploy-token-with-channel",
+    ({ body }) => postPublishTokenWithChannel(body),
+    {
+      body: PublishTokenWithChannelSchema,
+    },
+  )
   .listen({
     port: process.env.PORT || 3000,
     hostname: "0.0.0.0",
@@ -49,6 +59,18 @@ const app = new Elysia()
 
 async function postPublishToken(body: PublishTokenParams) {
   const txBytes = await publishInterchainTx(body);
+
+  return {
+    data: {
+      txBytes,
+    },
+  };
+}
+
+async function postPublishTokenWithChannel(
+  body: PublishTokenWithChannelParams,
+) {
+  const txBytes = await publishInterchainWithChannelTx(body);
 
   return {
     data: {
